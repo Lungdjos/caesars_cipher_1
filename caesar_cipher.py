@@ -1,3 +1,4 @@
+
 def caesar_cipher(text, shift):
     result = ""
     # loop through each character in the text
@@ -20,11 +21,30 @@ def caesar_cipher(text, shift):
 
 # Encryption Method
 message = input("Enter plain-text to cipher: ")
-key = input("Enter key to cipher(positive value): ")
-encrypted_message = caesar_cipher(message, 3)
-print(encrypted_message) # prints the encrypted msg
+key = int(input("Enter key to cipher(positive value): "))
 
+# adding the condition checker
+if (key > 0):
+    print("The encrypted message is:")
+    encrypted_message = caesar_cipher(message, key)
+    print(encrypted_message) # prints the encrypted msg
 
-# Decryption Method
-decrypted_message = caesar_cipher(encrypted_message, -3)
-print(decrypted_message) # prints "HELLO WORLD"
+else:
+    option = 0
+    print("Do you mean to decrypt the text you have entered? \n1. Yes \n2. No")
+
+    # exception handling
+    try:
+        # Code that may raise an exception
+        option = int(input("Enter the option: "))
+    except IOError:
+        # Code to handle the exception
+        print("The input you provided is not an integer.")
+    else:
+        # Code to execute if no exception was raised
+        if (option == 1):
+            # Decryption Method
+            decrypted_message = caesar_cipher(message, key)
+            print(decrypted_message) # prints a decrypted text
+        else:
+            exit()
