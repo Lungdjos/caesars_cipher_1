@@ -19,12 +19,12 @@ def caesar_cipher(text, shift):
 
 
 # Encryption Method
-message = input("Enter plain text to cipher: ")
+message = input("Enter plain-text to cipher: ")
+key = input("Enter key to cipher(positive value): ")
 encrypted_message = caesar_cipher(message, 3)
-print(encrypted_message) # prints "KHOOR ZRUOG"
+print(encrypted_message) # prints the encrypted msg
 
 
 # Decryption Method
-
-# decrypted_message = caesar_cipher(encrypted_message, -3)
-# print(decrypted_message) # prints "HELLO WORLD"
+decrypted_message = caesar_cipher(encrypted_message, -3)
+print(decrypted_message) # prints "HELLO WORLD"
